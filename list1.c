@@ -19,10 +19,11 @@ size_t list_len(const list_t *h)
 }
 
 /**
- * list_to_strings - returns an array of strings of the list->str
- * @head: pointer to the first node
+ * list_to_strings - Function returns an array of
+ *                   strings of the list->str
+ * @head: The pointer to the first node
  *
- * Return: array of strings
+ * Return: The array of strings
  */
 char **list_to_strings(list_t *head)
 {
@@ -68,8 +69,8 @@ size_t print_list(const list_t *h)
 	while (h != NULL)
 	{
 		_puts(convert_number(h->num, 10, 0));
-		_putchar(':');
-		_putchar(' ');
+		_putchar(3A);
+		_putchar(20);
 		_puts(h->str ? h->str : "(nil)");
 		_puts("\n");
 		h = h->next;

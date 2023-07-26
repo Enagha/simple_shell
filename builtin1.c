@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * _myhistory - displays the history list, one command by line, preceded
- *              with line numbers, starting at 0.
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
+ * _myhistory - function displays the history list, one command by line,
+ *              preceded with line numbers, starting at 0.
+ * @info: struct parameter
  *  Return: Always 0
  */
 int _myhistory(info_t *info)
@@ -14,30 +13,30 @@ int _myhistory(info_t *info)
 }
 
 /**
- * unset_alias - sets alias to string
- * @info: parameter struct
+ * unset_alias - function sets alias to string
+ * @info: struct parameter
  * @str: the string alias
  *
  * Return: Always 0 on success, 1 on error
  */
 int unset_alias(info_t *info, char *str)
 {
-	char *p, c;
+	char *k, qu;
 	int ret;
 
-	p = _strchr(str, '=');
-	if (!p)
+	k = _strchr(str, '=');
+	if (!k)
 		return (1);
-	c = *p;
-	*p = 0;
+	qu = *k;
+	*k = 0;
 	ret = delete_node_at_index(&(info->alias),
 		get_node_index(info->alias, node_starts_with(info->alias, str, -1)));
-	*p = c;
+	*k = qu;
 	return (ret);
 }
 
 /**
- * set_alias - sets alias to string
+ * set_alias - function sets alias to string
  * @info: parameter struct
  * @str: the string alias
  *
@@ -58,7 +57,7 @@ int set_alias(info_t *info, char *str)
 }
 
 /**
- * print_alias - prints an alias string
+ * print_alias - function prints an alias string
  * @node: the alias node
  *
  * Return: Always 0 on success, 1 on error
@@ -81,8 +80,8 @@ int print_alias(list_t *node)
 }
 
 /**
- * _myalias - mimics the alias builtin (man alias)
- * @info: Structure containing potential arguments. Used to maintain
+ * _myalias - function mimics the alias builtin (man alias)
+ * @info: Struct contains potential arguments used to maintain
  *          constant function prototype.
  *  Return: Always 0
  */
@@ -95,7 +94,7 @@ int _myalias(info_t *info)
 	if (info->argc == 1)
 	{
 		node = info->alias;
-		while (node)
+		while (node != NULL)
 		{
 			print_alias(node);
 			node = node->next;

@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * mefree - frees memory space pointed to by a pointer
- * @ptr: address of pointer to free
+ * mefree - function frees memory space pointed to by a pointer
+ * @ptr: pointer address to free
  *
  * Return: 1 if succesful, otherwise 0.
  */

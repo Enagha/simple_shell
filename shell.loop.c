@@ -2,7 +2,7 @@
 
 /**
  * hsh - main shell loop
- * @info: the parameter & return info struct
+ * @info: struct contains parameter & return info
  * @av: the argument vector from main()
  *
  * Return: 0 on success, 1 on error, or error code
@@ -19,7 +19,7 @@ int hsh(info_t *info, char **av)
 			_puts("$ ");
 		_eputchar(BUF_FLUSH);
 		r = get_input(info);
-		if (r != -1)
+		if (r < -1 || r > -1)
 		{
 			set_info(info, av);
 			builtin_ret = find_builtin(info);
@@ -44,7 +44,7 @@ int hsh(info_t *info, char **av)
 }
 
 /**
- * find_builtin - finds a builtin command
+ * find_builtin - function finds a builtin command
  * @info: the parameter & return info struct
  *
  * Return: -1 if builtin not found,
@@ -66,20 +66,21 @@ int find_builtin(info_t *info)
 		{"alias", _myalias},
 		{NULL, NULL}
 	};
-
-	for (i = 0; builtintbl[i].type; i++)
+	i = 0;
+	while (builtintbl[i].type)
 		if (_strcmp(info->argv[0], builtintbl[i].type) == 0)
 		{
 			info->line_count++;
 			built_in_ret = builtintbl[i].func(info);
 			break;
+			i++;
 		}
 	return (built_in_ret);
 }
 
 /**
- * find_cmd - finds a command in PATH
- * @info: the parameter & return info struct
+ * find_cmd - function finds a command in PATH
+ * @info:struct  parameter & return info
  *
  * Return: void
  */
@@ -120,8 +121,8 @@ void find_cmd(info_t *info)
 }
 
 /**
- * fork_cmd - forks a an exec thread to run cmd
- * @info: the parameter & return info struct
+ * fork_cmd - function forks an exec thread to run cmd
+ * @info: struct parameter & return info
  *
  * Return: void
  */
@@ -154,7 +155,7 @@ void fork_cmd(info_t *info)
 		{
 			info->status = WEXITSTATUS(info->status);
 			if (info->status == 126)
-				print_error(info, "Permission denied\n");
+				print_error(info, "Permission not granted\n");
 		}
 	}
 }
