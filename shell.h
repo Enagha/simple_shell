@@ -12,8 +12,8 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/**
- *read/write buffers 
+/*
+ * for read/write buffers
  */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
@@ -93,14 +93,15 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buf; 
-	int cmd_buf_type; 
+	char **cmd_buf;
+	int cmd_buf_type;
 	int readfd;
 	int histcount;
 } info_t;
 
-#define INFO_INIT {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
-
+#define INFO_INIT \
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 
+	\ 0, 0,0}
 /**
  *struct builtin - contains a builtin string and related function
  *@type: the builtin command flag
