@@ -1,7 +1,7 @@
 builtin.c
 #include "shell.h"
 /**
- * _myexit – To exits the shell
+ * _myexit -to exits the shell
  * @info: The structure containing potential arguments.
  * constant function prototype.
  * Return: To exits with a given exit status
@@ -25,12 +25,12 @@ int _myexit(info_t *info)
 		info->err_num = _erratoi(info->argv[1]);
 		return (-2);
 	}
-	info->err_num = -1;  /* If there is no arguement */ 
+	info->err_num = -1;  /* If there is no arguement */
 	return (-2);
 }
 
 /**
- * _mycd - Command changes the current directory of the process
+ * _mycd - command changes the current directory of the process
  * @info: The structure containing potential arguments.
  * constant function prototype.
  * Return: Always 0
@@ -42,7 +42,7 @@ int _mycd(info_t *info)
 
 	s = getcwd(buffer, 1024);
 	if (!s)
-		_puts("TODO: >>getcwd failure emsg here<<\n"); /* No argument passed into the function */
+	_puts("TODO: >>getcwd failure emsg here<<\n"); /*argt. pased into fun.*/
 	if (!info->argv[1])
 	{
 		dir = _getenv(info, "HOME=");
@@ -80,9 +80,9 @@ int _mycd(info_t *info)
 }
 
 /**
- * _myhelp – Displays an help message
- * @info: The Structure containing potential arguments of constant function prototype.
- * Return: Always 0
+ * _myhelp - displays an help message
+ * @info: Struct. containing potential arguments of constant funct. prototype.
+ * * Return: Always 0
  */
 int _myhelp(info_t *info)
 {
