@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * _myenv – It prints the current environment
- * @info: Structure containing potential arguments for maintaining constant function prototype.
+ * _myenv - it prints the current environment
+ * @info:d struc. containing potential arg.to maintain constant func. prototyp.
  * Return: Always 0
  */
 int _myenv(info_t *info)
@@ -32,8 +32,8 @@ char *_getenv(info_t *info, const char *name)
 }
 
 /**
- * _mysetenv – it Initialize a new environment variable, or modify an existing one.
- * @info: The structure containing potential arguments used to maintain constant function prototype.
+ * _mysetenv - it Initialize a new environ. var.,or modify an existing one.
+ * @info:d struc. containing potential arg.to maintain constant func. prototyp.
  * Return: Always 0
  */
 int _mysetenv(info_t *info)
@@ -49,8 +49,8 @@ int _mysetenv(info_t *info)
 }
 
 /**
- * _myunsetenv – To remove an environment variable.
- * @info: The structure containing potential arguments used to maintain constant function prototype.
+ * _myunsetenv - to remove an environment variable.
+ * @info:d struc. containing potential arg.to maintain constant func. prototyp.
  * Return: Always 0
  */
 int _myunsetenv(info_t *info)
@@ -70,7 +70,7 @@ int _myunsetenv(info_t *info)
 
 /**
  * populate_env_list - populates enviroment linked list
- * @info: The structure containing potential arguments used to maintain constant function prototype.
+ * @info:d struc. containing potential arg.to maintain constant func. prototyp.
  * Return: Always 0
  */
 int populate_env_list(info_t *info)

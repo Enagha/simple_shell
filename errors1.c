@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * _erratoi – it converts a string to an integer
+ * _erratoi - it converts a string to an integer
  * @s: the string to be converted.
  * Return: 0 if no numbers in string, converted number if otherwise
  * return -1 on error
@@ -28,7 +28,7 @@ int _erratoi(char *s)
 }
 
 /**
- * print_error – it prints an error message
+ * print_error - it prints an error message
  * @info: the parameter & return info struct
  * @estr: strings containing the specified error type.
  * Return: 0 if no numbers in string, converted number if otherwise
@@ -46,10 +46,10 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d –the function prints a decimal (integer) number (base 10)
- * @input: the inputs. 
+ * print_d - the function prints a decimal (integer) number (base 10)
+ * @input: the inputs.
  * @fd: the file descriptor to write to.
-  * Return: the number of characters printed.
+ * Return: the number of characters printed.
  */
 int print_d(int input, int fd)
 {
